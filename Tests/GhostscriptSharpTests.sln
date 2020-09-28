@@ -1,9 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostscriptSharpTests", "GhostscriptSharpTests\GhostscriptSharpTests.csproj", "{2B5A3CF6-D6A9-49D5-B88E-419DA34F1C20}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostscriptSharp", "..\GhostscriptSharp\GhostscriptSharp.csproj", "{56605627-E6FA-4F47-9440-FB877CEA5C84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostScriptIntegration", "GhostScriptIntegration\GhostScriptIntegration.csproj", "{F8F22945-33B4-49FE-B2FE-D58A473BC9B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,8 +23,15 @@ Global
 		{56605627-E6FA-4F47-9440-FB877CEA5C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56605627-E6FA-4F47-9440-FB877CEA5C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56605627-E6FA-4F47-9440-FB877CEA5C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F22945-33B4-49FE-B2FE-D58A473BC9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F22945-33B4-49FE-B2FE-D58A473BC9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F22945-33B4-49FE-B2FE-D58A473BC9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F22945-33B4-49FE-B2FE-D58A473BC9B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FBEE4A91-125C-4EB2-A4A1-C762F91F7F1B}
 	EndGlobalSection
 EndGlobal

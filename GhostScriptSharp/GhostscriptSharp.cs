@@ -8,8 +8,11 @@ namespace GhostscriptSharp
 	/// <summary>
 	/// Wraps the Ghostscript API with a C# interface
 	/// </summary>
-	public class GhostscriptWrapper
+	public static class GhostscriptWrapper
 	{
+        // Check Current Runtime Architecture so we can load the correct ghostscript library
+        static readonly Architecture architecture = RuntimeInformation.ProcessArchitecture;
+
 		#region Globals
 
 		private static readonly string[] ARGS = new string[] {
@@ -49,7 +52,7 @@ namespace GhostscriptSharp
 		/// </summary>
 		public static void GeneratePageThumbs(string inputPath, string outputPath, int firstPage, int lastPage, int dpix, int dpiy, int width = 0, int height = 0)
 		{
-            if (IntPtr.Size == 4)
+            if ( architecture == Architecture.X86 )
                 API.GhostScript32.CallAPI(GetArgs(inputPath, outputPath, firstPage, lastPage, dpix, dpiy, width, height));
             else
                 API.GhostScript64.CallAPI(GetArgs(inputPath, outputPath, firstPage, lastPage, dpix, dpiy, width, height));
@@ -63,8 +66,8 @@ namespace GhostscriptSharp
 		/// <param name="settings">Conversion settings</param>
 		public static void GenerateOutput(string inputPath, string outputPath, GhostscriptSettings settings)
 		{
-            if (IntPtr.Size == 4)
-                API.GhostScript32.CallAPI(GetArgs(inputPath, outputPath, settings));
+			if ( architecture == Architecture.X86 )
+				API.GhostScript32.CallAPI(GetArgs(inputPath, outputPath, settings));
             else
                 API.GhostScript64.CallAPI(GetArgs(inputPath, outputPath, settings));
 		}
