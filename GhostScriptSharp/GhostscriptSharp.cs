@@ -1,14 +1,13 @@
 using System;
 using System.Drawing;
-using System.Text;
 using System.Runtime.InteropServices;
 
 namespace GhostscriptSharp
 {
-	/// <summary>
-	/// Wraps the Ghostscript API with a C# interface
-	/// </summary>
-	public static class GhostscriptWrapper
+    /// <summary>
+    /// Wraps the Ghostscript API with a C# interface
+    /// </summary>
+    public static class GhostscriptWrapper
 	{
         // Check Current Runtime Architecture so we can load the correct ghostscript library
         static readonly Architecture architecture = RuntimeInformation.ProcessArchitecture;
@@ -31,7 +30,8 @@ namespace GhostscriptSharp
                 "-dAlignToPixels=0",
                 "-dGridFitTT=0",
                 "-dTextAlphaBits=4",
-                "-dGraphicsAlphaBits=4"
+                "-dGraphicsAlphaBits=4",
+				"-dUseCropBox"
 		};
 		#endregion
 
@@ -224,10 +224,10 @@ namespace GhostscriptSharp
 
 namespace GhostscriptSharp.Settings
 {
-	/// <summary>
-	/// Which pages to output
-	/// </summary>
-	public class GhostscriptPages
+    /// <summary>
+    /// Which pages to output
+    /// </summary>
+    public class GhostscriptPages
 	{
 		private bool _allPages = true;
 		private int _start;
